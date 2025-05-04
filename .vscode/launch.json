@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-http-server}",
+            "name": "Debug swift-http-server",
+            "program": "${workspaceFolder:swift-http-server}/.build/debug/swift-http-server",
+            "preLaunchTask": "swift: Build Debug swift-http-server"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-http-server}",
+            "name": "Release swift-http-server",
+            "program": "${workspaceFolder:swift-http-server}/.build/release/swift-http-server",
+            "preLaunchTask": "swift: Build Release swift-http-server"
+        }
+    ]
+}
