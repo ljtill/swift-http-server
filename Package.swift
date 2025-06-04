@@ -15,7 +15,12 @@ let package = Package(
             name: "swift-http-server",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
-            ]
-        )
+            ],
+        ),
+        .testTarget(
+            name: "ServerTests",
+            dependencies: [
+                "swift-http-server"
+            ]),
     ]
 )
