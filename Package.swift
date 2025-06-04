@@ -15,6 +15,11 @@ let package = Package(
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "Logging", package: "swift-log"),
             ],
-        )
+        ),
+        .testTarget(
+            name: "ServerTests",
+            dependencies: [
+                "swift-http-server"
+            ]),
     ]
 )
