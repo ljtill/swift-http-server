@@ -10,16 +10,16 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "swift-http-server",
+            name: "HttpServer",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
                 .product(name: "Logging", package: "swift-log"),
             ],
         ),
         .testTarget(
-            name: "ServerTests",
+            name: "HttpServerTests",
             dependencies: [
-                "swift-http-server"
+                "HttpServer"
             ]),
     ]
 )

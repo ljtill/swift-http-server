@@ -5,18 +5,18 @@
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:swift-http-server}",
-            "name": "Debug swift-http-server",
-            "program": "${workspaceFolder:swift-http-server}/.build/debug/swift-http-server",
-            "preLaunchTask": "swift: Build Debug swift-http-server"
+            "name": "Debug http",
+            "program": "${workspaceFolder:swift-http-server}/.build/debug/http",
+            "preLaunchTask": "swift: Build Debug http"
         },
         {
             "type": "swift",
             "request": "launch",
             "args": [],
             "cwd": "${workspaceFolder:swift-http-server}",
-            "name": "Release swift-http-server",
-            "program": "${workspaceFolder:swift-http-server}/.build/release/swift-http-server",
-            "preLaunchTask": "swift: Build Release swift-http-server"
+            "name": "Release http",
+            "program": "${workspaceFolder:swift-http-server}/.build/release/http",
+            "preLaunchTask": "swift: Build Release http"
         }
     ]
 }
