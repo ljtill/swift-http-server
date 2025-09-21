@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f6f8fa" stroke="#333" stroke-width="2"/>
+  <circle cx="100" cy="100" r="50" fill="#333"/>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333">
+    Swift HTTP Server
+  </text>
+  <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    SVG Example
+  </text>
+</svg>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Swift HTTP Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <h1>Swift HTTP Server</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="demo.html">Features</a>
+            <a href="assets/">Directory</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Project Overview</h2>
+            <p>This Swift HTTP Server represents a modern approach to static file serving, combining the performance of SwiftNIO with the safety and expressiveness of Swift 6. Built from the ground up with security, performance, and developer experience in mind.</p>
+            
+            <h3>Design Philosophy</h3>
+            <p>The server embodies several key principles:</p>
+            <ul>
+                <li><strong>Security by Default:</strong> All inputs are validated and sanitized automatically</li>
+                <li><strong>Performance First:</strong> Non-blocking I/O and efficient memory management</li>
+                <li><strong>Developer Friendly:</strong> Simple CLI interface with sensible defaults</li>
+                <li><strong>Production Ready:</strong> Comprehensive logging and graceful error handling</li>
+            </ul>
+            
+            <h3>Built With</h3>
+            <ul>
+                <li><strong>Swift 6.2+</strong> - Modern Swift with strict concurrency and memory safety</li>
+                <li><strong>SwiftNIO</strong> - Apple's high-performance, event-driven networking framework</li>
+                <li><strong>ArgumentParser</strong> - Type-safe command-line argument parsing</li>
+            </ul>
+            
+            <h3>Architecture</h3>
+            <p>The server follows a clean, modular architecture that separates concerns and enables reusability:</p>
+            <ul>
+                <li><code>HttpServerCore</code> - Core HTTP server functionality as a reusable library</li>
+                <li><code>HttpServer</code> - Command-line interface wrapper for standalone usage</li>
+                <li><strong>Separation of Concerns:</strong> Network layer, file handling, security, and logging are isolated</li>
+                <li><strong>Testability:</strong> 9 comprehensive tests across unit, integration, and end-to-end scenarios</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Deep Dive</h2>
+            
+            <h3>SwiftNIO Integration</h3>
+            <p>The server leverages SwiftNIO's channel pipeline architecture for maximum performance:</p>
+            <ul>
+                <li><strong>Event Loop Groups:</strong> Optimal thread utilization based on CPU cores</li>
+                <li><strong>Channel Handlers:</strong> Custom HTTP file handler for request processing</li>
+                <li><strong>Async/Await:</strong> Modern Swift concurrency for clean asynchronous code</li>
+                <li><strong>Back Pressure:</strong> Automatic flow control for large file transfers</li>
+            </ul>
+
+            <h3>MIME Type Detection</h3>
+            <p>Essential web content support with automatic content-type detection:</p>
+            <ul>
+                <li><strong>Core File Types:</strong> HTML, CSS, JavaScript, JSON, and basic images</li>
+                <li><strong>Charset Handling:</strong> Proper UTF-8 encoding for text content</li>
+                <li><strong>Extensible:</strong> Easy to add new MIME type mappings</li>
+                <li><strong>Fallback:</strong> Safe default for unknown file types</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Security Features</h2>
+            <p>Security is paramount in any web server. This implementation includes multiple layers of protection against common attack vectors:</p>
+            
+            <h3>Path Security</h3>
+            <ul>
+                <li><strong>Directory Traversal Protection:</strong> Prevents access outside document root using path sanitization</li>
+                <li><strong>Path Normalization:</strong> Resolves symbolic links and relative path components safely</li>
+                <li><strong>Input Sanitization:</strong> Removes dangerous path elements like <code>..</code> and <code>.</code></li>
+                <li><strong>Validation Pipeline:</strong> Multi-stage path validation ensures no bypass attempts succeed</li>
+            </ul>
+
+            <h3>Request Handling</h3>
+            <ul>
+                <li><strong>Method Validation:</strong> Only GET requests are accepted, preventing unwanted modifications</li>
+                <li><strong>Header Sanitization:</strong> Safe handling of HTTP headers and metadata</li>
+                <li><strong>Error Information:</strong> Minimal error disclosure to prevent information leakage</li>
+                <li><strong>Resource Limits:</strong> Automatic protection against resource exhaustion</li>
+            </ul>
+
+            <h3>Logging & Monitoring</h3>
+            <ul>
+                <li><strong>Request Tracking:</strong> Complete audit trail of all server interactions</li>
+                <li><strong>Security Events:</strong> Detailed logging of security-relevant events</li>
+                <li><strong>Simple Format:</strong> Console logs with timestamps for local development</li>
+                <li><strong>Error Details:</strong> Clear error messages for debugging</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Development & Testing</h2>
+            
+            <h3>Test Coverage</h3>
+            <p>The project maintains comprehensive test coverage across three distinct test categories:</p>
+            <ul>
+                <li><strong>Unit Tests (5):</strong> Fast, isolated tests for individual components including edge cases</li>
+                <li><strong>Integration Tests (3):</strong> Real networking tests with SwiftNIO, 404 handling, and directory listing</li>
+                <li><strong>End-to-End Tests (1):</strong> Complete system validation including CLI</li>
+            </ul>
+
+            <h3>CI/CD Pipeline</h3>
+            <ul>
+                <li><strong>Cross-Platform:</strong> Automated testing on macOS and Ubuntu</li>
+                <li><strong>Parallel Execution:</strong> Optimized test runs for faster feedback</li>
+                <li><strong>Swift Testing:</strong> Modern testing framework for better developer experience</li>
+                <li><strong>Port Management:</strong> Fixed ports for consistency</li>
+            </ul>
+
+            <h3>Code Quality</h3>
+            <ul>
+                <li><strong>Swift 6 Compliance:</strong> Strict concurrency checking and memory safety</li>
+                <li><strong>Documentation:</strong> Comprehensive API documentation following standard conventions</li>
+                <li><strong>Error Handling:</strong> Robust error propagation and recovery strategies</li>
+                <li><strong>Performance:</strong> Optimized for both memory usage and request throughput</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Swift HTTP Server - Built with Swift and SwiftNIO</p>
+    </footer>
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
