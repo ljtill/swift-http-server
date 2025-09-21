@@ -21,5 +21,57 @@ jobs:
       uses: swift-actions/setup-swift@v2
     - name: Build
       run: swift build
-    - name: Test
-      run: swift test
+
+  test-unit:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup
+      uses: swift-actions/setup-swift@v2
+    - name: Build
+      run: swift build
+    - name: Test Unit
+      run: swift test --filter UnitTests
+
+  test-integration:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup
+      uses: swift-actions/setup-swift@v2
+    - name: Build
+      run: swift build
+    - name: Test Integration
+      run: swift test --filter IntegrationTests
+
+  test-endtoend:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup
+      uses: swift-actions/setup-swift@v2
+    - name: Build
+      run: swift build
+    - name: Test EndToEnd
+      run: swift test --filter EndToEndTests
