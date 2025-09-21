@@ -1,0 +1,12 @@
+{
+  "message": "Hello from the Swift HTTP Server!",
+  "timestamp": "2025-01-01T00:00:00Z",
+  "server": "Swift HTTP Server",
+  "version": "1.0.0",
+  "features": [
+    "Static file serving",
+    "MIME type detection", 
+    "Directory listing",
+    "Security protection"
+  ]
+}

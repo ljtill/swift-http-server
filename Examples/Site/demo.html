@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Swift HTTP Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <h1>Swift HTTP Server</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="demo.html" class="active">Features</a>
+            <a href="assets/">Directory</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Server Features</h2>
+            <p>This page demonstrates various server capabilities in action:</p>
+        </section>
+
+        <section>
+            <h2>File Type Examples</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div>
+                    <h3>Text Files</h3>
+                    <ul>
+                        <li><a href="assets/test.txt">Plain Text (.txt)</a></li>
+                        <li><a href="assets/README.txt">Documentation (.txt)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Data Files</h3>
+                    <ul>
+                        <li><a href="assets/data.json">JSON Data (.json)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Images</h3>
+                    <ul>
+                        <li><a href="assets/sample.svg">SVG Graphics (.svg)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Web Assets</h3>
+                    <ul>
+                        <li><a href="styles/main.css">CSS Stylesheet (.css)</a></li>
+                        <li><a href="scripts/main.js">JavaScript (.js)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Directory Browsing</h2>
+            <p>When no index.html exists, the server generates a directory listing:</p>
+            <ul>
+                <li><a href="assets/">Assets Directory</a> - Browse files and subdirectories</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Security Testing</h2>
+            <p>Try these URLs to test the server's security features:</p>
+            <ul>
+                <li><a href="../">Parent Directory</a> - Should be blocked/sanitized</li>
+                <li><a href="../../etc/passwd">Path Traversal</a> - Should be blocked</li>
+                <li><a href="/etc/passwd">Absolute Path</a> - Should be contained to document root</li>
+            </ul>
+            <p><em>Note: All dangerous paths are sanitized for security.</em></p>
+        </section>
+
+        <section>
+            <h2>Server Information</h2>
+            <p>Current server details:</p>
+            <ul>
+                <li><strong>Server:</strong> Swift HTTP Server</li>
+                <li><strong>Framework:</strong> SwiftNIO</li>
+                <li><strong>Language:</strong> Swift 6.2+</li>
+                <li><strong>Request Method:</strong> GET only</li>
+                <li><strong>Document Root:</strong> Examples/Site/</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Interactive Test</h2>
+            <div id="test-results" style="background: #f6f8fa; padding: 1rem; border-radius: 5px; margin-top: 1rem;">
+                <p>Click the button to test JavaScript functionality:</p>
+                <button onclick="runTest()" style="padding: 0.5rem 1rem; background: #333; color: white; border: none; border-radius: 3px; cursor: pointer;">
+                    Run Test
+                </button>
+                <div id="results" style="margin-top: 1rem;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Swift HTTP Server - Built with Swift and SwiftNIO</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        function runTest() {
+            const results = document.getElementById('results');
+            results.innerHTML = `
+                <h4>Test Results:</h4>
+                <ul>
+                    <li>✅ JavaScript execution: Working</li>
+                    <li>✅ CSS styling: Applied</li>
+                    <li>✅ HTML rendering: Complete</li>
+                    <li>✅ Server response: ${new Date().toLocaleTimeString()}</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>

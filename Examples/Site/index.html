@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift HTTP Server</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <h1>Swift HTTP Server</h1>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="demo.html">Features</a>
+            <a href="assets/">Directory</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to Swift HTTP Server</h2>
+            <p>A modern, lightweight HTTP server built with Swift and SwiftNIO for serving static files during local development.</p>
+
+            <h3>Quick Start</h3>
+            <p>Get up and running in seconds:</p>
+            <ul>
+                <li><code>swift run HttpServer .</code> - Serve current directory</li>
+                <li><code>swift run HttpServer ./Examples/Site --port 3000</code> - Custom directory and port</li>
+                <li><code>swift run HttpServer . --host 0.0.0.0 --port 8080</code> - Bind to all interfaces</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Static File Serving</strong> - Efficiently serve HTML, CSS, JavaScript, images, and more</li>
+                <li><strong>MIME Type Detection</strong> - Automatic content-type headers for web files</li>
+                <li><strong>Directory Listing</strong> - Browse directories when no index.html exists</li>
+                <li><strong>Security Protection</strong> - Built-in directory traversal protection</li>
+                <li><strong>Simple Logging</strong> - Console logging with timestamps for development</li>
+                <li><strong>Graceful Shutdown</strong> - Clean server shutdown on SIGINT</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Built with Swift 6</h2>
+            <p>This server demonstrates modern Swift development practices:</p>
+            <ul>
+                <li><strong>SwiftNIO</strong> - High-performance, non-blocking I/O</li>
+                <li><strong>Structured Concurrency</strong> - async/await for clean asynchronous code</li>
+                <li><strong>Modular Architecture</strong> - Reusable HttpServerCore library</li>
+                <li><strong>Comprehensive Testing</strong> - 9 tests across unit, integration, and end-to-end scenarios</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Swift HTTP Server - Built with Swift and SwiftNIO</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
