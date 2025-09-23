@@ -1,0 +1,50 @@
+name: "Setup Swift"
+description: "Install Swift using Swiftly toolchain manager"
+inputs:
+  toolchain:
+    description: "Swift toolchain version to install"
+    required: false
+    default: "latest"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Swiftly (Linux)
+      if: runner.os == 'Linux'
+      shell: bash
+      run: |
+        echo "Installing dependencies for Swiftly..."
+        sudo apt-get update
+        sudo apt-get -y install libcurl4-openssl-dev
+
+        echo "Installing Swiftly on Linux..."
+        curl -O https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz
+        tar zxf swiftly-$(uname -m).tar.gz
+        ./swiftly init --assume-yes --no-modify-profile --skip-install --quiet-shell-followup
+        . "${SWIFTLY_HOME_DIR:-$HOME/.local/share/swiftly}/env.sh"
+
+        echo "${SWIFTLY_HOME_DIR:-$HOME/.local/share/swiftly}/bin" >> $GITHUB_PATH
+
+    - name: Install Swiftly (macOS)
+      if: runner.os == 'macOS'
+      shell: bash
+      run: |
+        echo "Installing Swiftly on macOS..."
+        curl -O https://download.swift.org/swiftly/darwin/swiftly.pkg
+        installer -pkg swiftly.pkg -target CurrentUserHomeDirectory
+        ~/.swiftly/bin/swiftly init --assume-yes --no-modify-profile --skip-install --quiet-shell-followup
+        . "${SWIFTLY_HOME_DIR:-$HOME/.swiftly}/env.sh"
+
+        echo "${SWIFTLY_HOME_DIR:-$HOME/.swiftly}/bin" >> $GITHUB_PATH
+
+    - name: Install Swift toolchain
+      shell: bash
+      run: |
+        echo "Installing Swift toolchain: ${{ inputs.toolchain }}"
+
+        if [[ "${{ inputs.toolchain }}" == "latest" ]]; then
+          swiftly install latest
+        else
+          swiftly install "${{ inputs.toolchain }}"
+        fi
+
+        swift --version
