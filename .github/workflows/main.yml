@@ -18,7 +18,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v5
     - name: Setup
-      uses: swift-actions/setup-swift@v2
+      uses: swift-actions/setup-swift@v3
     - name: Build
       run: swift build
 
@@ -34,7 +34,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup
-      uses: swift-actions/setup-swift@v2
+      uses: swift-actions/setup-swift@v3
     - name: Build
       run: swift build
     - name: Test Unit
@@ -52,7 +52,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup
-      uses: swift-actions/setup-swift@v2
+      uses: swift-actions/setup-swift@v3
     - name: Build
       run: swift build
     - name: Test Integration
@@ -70,7 +70,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Setup
-      uses: swift-actions/setup-swift@v2
+      uses: swift-actions/setup-swift@v3
     - name: Build
       run: swift build
     - name: Test EndToEnd
