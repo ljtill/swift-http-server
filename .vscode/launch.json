@@ -3,20 +3,22 @@
         {
             "type": "swift",
             "request": "launch",
-            "args": [],
+            "args": ["${workspaceFolder}/Examples/Site"],
             "cwd": "${workspaceFolder:swift-http-server}",
-            "name": "Debug http",
-            "program": "${workspaceFolder:swift-http-server}/.build/debug/http",
-            "preLaunchTask": "swift: Build Debug http"
+            "name": "Debug HttpServer",
+            "preLaunchTask": "swift: Build Debug HttpServer",
+            "target": "HttpServer",
+            "configuration": "debug"
         },
         {
             "type": "swift",
             "request": "launch",
-            "args": [],
+            "args": ["${workspaceFolder}/Examples/Site"],
             "cwd": "${workspaceFolder:swift-http-server}",
-            "name": "Release http",
-            "program": "${workspaceFolder:swift-http-server}/.build/release/http",
-            "preLaunchTask": "swift: Build Release http"
+            "name": "Release HttpServer",
+            "preLaunchTask": "swift: Build Release HttpServer",
+            "target": "HttpServer",
+            "configuration": "release"
         }
     ]
 }
