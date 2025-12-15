@@ -38,7 +38,7 @@ jobs:
     - name: Build (Release)
       run: swift build -c release
     - name: Upload
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: httpserver-${{ matrix.os }}
         path: .build/release/HttpServer
